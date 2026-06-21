@@ -1,0 +1,36 @@
+IDENTIFICADORES DEL SISTEMA RV-SOLUTIONS
+========================================
+
+USUARIOS
+- Identificador visible: DNI de 8 dígitos.
+- Identificador interno: id_usuario AUTO_INCREMENT.
+- El ingreso al sistema acepta nombre de usuario o DNI.
+
+CLIENTES
+- Identificador visible: DNI de 8 dígitos.
+- Identificador interno: id_cliente AUTO_INCREMENT.
+
+EQUIPOS
+- Código visible automático: EQ-AAAA-000001.
+- Identificador interno: id_equipo AUTO_INCREMENT.
+- La serie es única cuando se registra.
+
+ÓRDENES
+- Código visible automático: ORD-AAAA-000001.
+- Identificador interno: id_orden AUTO_INCREMENT.
+- La base de datos valida que el equipo pertenezca al cliente indicado.
+
+DIAGNÓSTICOS
+- Código visible automático: DIAG-AAAA-000001.
+- Identificador interno: id_diagnostico AUTO_INCREMENT.
+- Se relaciona con una orden y un técnico.
+
+PAGOS
+- Código visible automático: PAG-AAAA-000001.
+- Identificador interno: id_pago AUTO_INCREMENT.
+- Se relaciona con una orden.
+
+IMPORTANTE
+Los códigos visibles se generan desde las clases DAO en el momento de registrar.
+Los IDs internos permanecen ocultos en las tablas de la interfaz y se usan solo
+para mantener las relaciones y ejecutar actualizaciones o eliminaciones.

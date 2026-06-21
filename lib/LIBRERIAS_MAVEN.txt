@@ -1,0 +1,18 @@
+LIBRERÍAS SOLICITADAS E INTEGRADAS EN EL PROYECTO
+
+Este proyecto ahora incluye la configuración Maven en el archivo pom.xml.
+A través de ese archivo quedan integradas las siguientes librerías:
+
+1. Apache POI
+2. Google Guava
+3. Apache Commons Lang
+4. Logback
+5. MySQL Connector/J
+
+Observación:
+- El archivo .jar físico que se mantiene en /lib es mysql-connector-j-9.7.0.jar
+- Las demás librerías quedaron declaradas en pom.xml para que Maven las descargue y gestione automáticamente.
+
+Comandos Maven sugeridos:
+- mvn compile
+- mvn exec:java

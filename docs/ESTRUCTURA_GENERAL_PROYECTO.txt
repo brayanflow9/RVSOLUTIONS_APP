@@ -1,0 +1,113 @@
+RV SOLUTIONS - ESTRUCTURA GENERAL DEL PROYECTO
+=============================================
+
+1. OBJETIVO DE LA ORGANIZACIÓN
+------------------------------
+Se reorganizó el proyecto para que sea más fácil identificar los módulos,
+la lógica del sistema, la base de datos, los recursos gráficos y los archivos
+compilados.
+
+2. ESTRUCTURA PRINCIPAL
+-----------------------
+RV-Solutions/
+│
+├── src/
+│   ├── Main.java                    -> punto de inicio del sistema
+│   ├── conexion/                    -> conexión a MySQL
+│   ├── controlador/                 -> reglas y coordinación de acciones
+│   ├── dao/                         -> acceso a datos (CRUD)
+│   ├── modelo/                      -> entidades del sistema
+│   └── vista/                       -> interfaces visuales
+│
+├── database/
+│   └── bd_servicio_tecnico.sql      -> base de datos completa
+│
+├── assets/
+│   ├── fondos/                      -> fondos de administrador y técnico
+│   ├── logo/                        -> logotipo e icono principal
+│   ├── banners/                     -> banners de apoyo
+│   ├── modulo_imagenes/             -> imágenes de encabezados de módulos
+│   ├── tecnico_icons/               -> iconografía del dashboard técnico
+│   ├── tecnico_equipos/             -> iconos usados en gestión de equipos
+│   ├── status_icons/                -> iconos de estado
+│   ├── ui_icons/                    -> campana y recursos UI
+│   └── kpi_icons/                   -> indicadores visuales
+│
+├── lib/
+│   └── mysql-connector-j-9.7.0.jar  -> conector de MySQL
+│
+├── test/
+│   └── controlador/                 -> pruebas unitarias
+│
+├── docs/
+│   └── ESTRUCTURA_GENERAL_PROYECTO.txt -> guía de estructura del proyecto
+│
+├── bin/                             -> clases compiladas listas para ejecutar
+└── target/                          -> salida de compilación/pruebas
+
+3. MÓDULOS FUNCIONALES DEL SISTEMA
+----------------------------------
+- Login
+- Panel Administrador
+- Panel Técnico
+- Clientes
+- Equipos
+- Órdenes y Servicios
+- Diagnósticos
+- Pagos
+- Usuarios
+- Imágenes
+- Configuración
+- Reportes CSV
+
+4. MÓDULOS DISPONIBLES PARA EL TÉCNICO
+--------------------------------------
+- Dashboard
+- Equipos
+- Órdenes y Servicios
+- Diagnósticos
+- Configuración
+
+Nota: la opción Clientes fue retirada del panel técnico porque el técnico no
+trabaja con datos generales de clientes.
+
+5. ARCHIVOS CLAVE PARA EL PANEL TÉCNICO
+---------------------------------------
+- src/vista/MenuTecnico.java         -> contenedor principal del panel técnico
+- src/vista/FormEquipos.java         -> módulo de equipos con diseño mejorado
+- src/vista/FormOrdenes.java         -> módulo de órdenes y servicios
+- src/vista/FormDiagnosticos.java    -> módulo de diagnósticos
+- assets/fondos/tecnico.png          -> fondo principal del técnico
+- assets/tecnico_equipos/            -> iconos del módulo equipos
+
+6. CRITERIO DE ORGANIZACIÓN
+---------------------------
+- MODELO: define los datos.
+- DAO: interactúa con la base de datos.
+- CONTROLADOR: valida y coordina la operación.
+- VISTA: muestra la información al usuario.
+- ASSETS: recursos visuales separados del código.
+- DOCS: documentación de apoyo para entender el trabajo.
+
+7. CAMBIOS RECIENTES APLICADOS
+------------------------------
+- Rediseño del módulo de Equipos del técnico.
+- Eliminación de la columna Acciones en la tabla de equipos.
+- Botones y filtros con bordes redondeados.
+- Eliminación del filtro "Todos los clientes" en Equipos.
+- Unificación visual del panel técnico.
+- Mejora del panel de Configuración.
+- Documentación adicional de estructura.
+
+8. INTERFACES TÉCNICAS UNIFICADAS
+---------------------------------
+Los módulos FormEquipos.java, FormOrdenes.java y FormDiagnosticos.java comparten:
+- fondo técnico
+- panel principal azul oscuro
+- tarjetas KPI
+- botones redondeados
+- tabla oscura
+- formularios emergentes para Nuevo y Editar
+
+Los formularios emergentes se enlazan a la ventana visible MenuTecnico para que
+funcionen correctamente al cargar cada módulo dentro del panel principal.
